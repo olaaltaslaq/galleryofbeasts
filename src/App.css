@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #67deff;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+h1{
+  
+  background-color: rgba(59, 93, 156, 0.733);
+  padding: 30px;
+  text-align: center;
+  border: solid black 1px;
+  box-shadow: rgb(106, 155, 245) 0px 3px 5px;
+}
+
+#Footer{
+  display: block;
+  background-color: rgba(59, 93, 156, 0.733);
+  padding: 30px;
+  text-align: center;
+  border: solid black 1px;
+  box-shadow: rgb(47, 82, 148) 0px 3px 8px;
+  font-size: 25px;
+  font-weight: bold;
+}
+#des{
+  font-size: 20px;
+  
+}
+#tit{
+  color: rgb(134, 4, 4);
+  background-color: rgba(236, 165, 142, 0.678);
+  padding: 3px;
+  width: 100%;
+}
+#close{
+  font-size: 23px;
+  background-color: rgb(134, 4, 4);
+}
+
