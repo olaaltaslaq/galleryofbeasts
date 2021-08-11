@@ -1,31 +1,52 @@
 import React from 'react';
+import './HornedBeast.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, Button } from 'react-bootstrap/';
 
 class HornedBeast extends React.Component {
-
-    constructor(props){
-      super(props);
-      this.state = {
-          numberOfPets : 0
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      numOfFavorites: 0
     }
+  }
 
-    increaseNuOfPets = () =>{
-        this.setState({
-            nunberOfPets:this.state.numberOfPets+1
-        }
-        )
-    }
+  increaseNumOfFavs = () => {
+    this.setState({
+      numOfFavorites: this.state.numOfFavorites+1
+    })
+  };
 
-  render(){
-    return(
+  renderForModal=()=>{
+    this.props.renderForModal(this.props.keyword);
+  };
 
-     <div>
-         <h2>{this.props.title}</h2>
-         <img src={this.props.imgUrl} alt={this.props.title} title={this.props.title}/>
-         <p> Number of Pets = {this.state.numberOfPets}</p>
-     </div>
+  render() {
 
-    )
+    return (
+
+      <div className='apples'>
+
+        <Card   style={{ width: 'auto' }}>
+
+          <Card.Title onClick={this.renderForModal}><h2> {this.props.title} </h2></Card.Title>
+          <Card.Title> keyword: {this.props.keyword}</Card.Title>
+          <Card.Title><h3> horns: {this.props.horns} </h3></Card.Title>
+          <Card.Img  onClick={this.increaseNumOfFavs} variant="top" src={this.props.imageUrl} alt={this.props.imageAlt} title={this.props.imageTitle} />
+
+          <Card.Body>
+            <Card.Text>
+              <Button  onClick={this.renderForModal} id="button" variant="primary"> ℹ️ Show Information </Button>
+              <p className="favorites"> 💖favorites= {this.state.numOfFavorites} </p>
+              <p id='dis'> {this.props.description} </p>
+            </Card.Text>
+          </Card.Body>
+
+        </Card>
+
+      </div>
+
+    );
   }
 }
 

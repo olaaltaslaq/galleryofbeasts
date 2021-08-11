@@ -1,26 +1,23 @@
 import React from 'react';
-import HornedBeast from './HornedBeast';
-import hornsData from './hornsData.json';
-
+import HornedBeast from "./HornedBeasts"
+import BeastsJson from "./BeastsJson";
+import './Main.css';
 
 class Main extends React.Component {
-  render(){
-    return(
-      <div>
-        {hornsData.map((item,idx)=>{
-            return (
-                <HornedBeast
-                    title={item.title}
-                    imgUrl={item.image_url}
-                    description= {item.description}
-                />
-            )
-        })}
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+        {
+           BeastsJson.map((x,indx)=>{
+            return(
+              <HornedBeast renderForModal={this.props.renderForModal}  key={indx} title = {x.title} imageUrl = {x.image_url} description = {x.description} keyword = {x.keyword} horns = {x.horns}/>
+            );
+          })
+        }
+            </div>
+        )
+    }
 }
 
 export default Main;
-
 
