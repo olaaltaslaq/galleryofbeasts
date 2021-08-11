@@ -10,7 +10,9 @@ class Main extends React.Component {
         {
            BeastsJson.map((x,indx)=>{
             return(
+
               <HornedBeast  key={indx} title = {x.title} imageUrl = {x.image_url} description = {x.description} keyword = {x.keyword} horns = {x.horns}/>
+
             );
           })
         }

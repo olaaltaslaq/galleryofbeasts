@@ -5,12 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class SelectedBeast extends React.Component {
     render() {
         return (
-          
+
             <div className="SelectedBeast">
 
                 <Modal show={this.props.show} onHide={this.props.handleClose}>
 
                     <Modal.Header closeButton>
+
                         <Modal.Title id="tit">🦄'this.props.clickedAnimal.title'
                         </Modal.Title>
                     </Modal.Header>
@@ -20,6 +21,7 @@ class SelectedBeast extends React.Component {
                     </Modal.Body>
                     <Modal.Title id="des">'this.props.clickedAnimal.description'
                     </Modal.Title>
+
 
                     <Modal.Footer>
                         <Button id="close" variant="primary"  onClick={this.props.handleClose}>
