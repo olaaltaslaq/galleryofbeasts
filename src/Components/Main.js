@@ -10,7 +10,9 @@ class Main extends React.Component {
         {
            BeastsJson.map((x,indx)=>{
             return(
-              <HornedBeast renderForModal={this.props.renderForModal}  key={indx} title = {x.title} imageUrl = {x.image_url} description = {x.description} keyword = {x.keyword} horns = {x.horns}/>
+
+              <HornedBeast  key={indx} title = {x.title} imageUrl = {x.image_url} description = {x.description} keyword = {x.keyword} horns = {x.horns}/>
+
             );
           })
         }
@@ -20,3 +22,4 @@ class Main extends React.Component {
 }
 
 export default Main;
+

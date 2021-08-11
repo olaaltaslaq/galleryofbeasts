@@ -2,12 +2,19 @@ import React from 'react';
 import './HornedBeast.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Button } from 'react-bootstrap/';
+import SelectedBeast from "./SelectedBeast";
+
 
 class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+
+      numOfFavorites: 0 ,
+      show: false 
+
       numOfFavorites: 0
+
     }
   }
 
@@ -18,15 +25,22 @@ class HornedBeast extends React.Component {
   };
 
   renderForModal=()=>{
-    this.props.renderForModal(this.props.keyword);
+
+    // this.props.renderForModal(this.props.keyword);
+    this.setState({
+      show: true 
+    })
+
   };
 
   render() {
 
     return (
 
+    
       <div className='apples'>
-
+       <SelectedBeast show={this.state.show} />
+=
         <Card   style={{ width: 'auto' }}>
 
           <Card.Title onClick={this.renderForModal}><h2> {this.props.title} </h2></Card.Title>
@@ -51,3 +65,4 @@ class HornedBeast extends React.Component {
 }
 
 export default HornedBeast;
+
